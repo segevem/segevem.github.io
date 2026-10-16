@@ -1,3 +1,90 @@
-Hello World
-<img src="segevem.github.io/F9uO0qHaoAA0Bf4.png" alt="Laseg's Dog">
-Laseg's Dog.
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Segev Elazar Mittelman is a PhD student at the University of Maryland working on programming languages, formal verification, and property-based testing.">
+  <title>Segev Elazar Mittelman — Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="page">
+    <header>
+      <a class="name" href="./">Segev<br>Elazar Mittelman</a>
+      <img class="portrait" src="images/segev.jpg" alt="Segev Elazar Mittelman">
+      <p class="role">PhD student · Computer science</p>
+      <p class="institution">University of Maryland<br>College Park</p>
+      <a class="email" href="mailto:segevem@umd.edu">segevem@umd.edu</a>
+      <p class="social"><a href="https://github.com/segevem">GitHub</a><br><a href="https://www.linkedin.com/in/segevem">LinkedIn</a></p>
+    </header>
+    <main id="main">
+      <section id="about" aria-labelledby="about-title">
+        <h1 id="about-title">About me</h1>
+        <p>I’m a PhD student in Computer Science at the University of Maryland, advised by
+          <a href="https://lemonidas.github.io/">Leonidas Lampropoulos</a> and a member of the
+          <a href="https://plum-umd.github.io/">PLUM lab</a>.</p>
+        <p>My research explores how property-based testing can make formal verification more automatic,
+          helping developers discover errors in their specifications before investing in full proofs.</p>
+        <p>I contribute to and help maintain <a href="https://github.com/QuickChick/QuickChick">QuickChick</a>,
+          a property-based testing framework for Rocq. My recent work,
+          <em>Testing Theorems, Fully Automatically</em>, enables QuickChick to automatically select and
+          construct effective generators for testing theorem statements. This functionality is available in
+          QuickChick’s <a href="https://github.com/QuickChick/QuickChick/tree/3.0-candidate"><code>3.0-candidate</code></a> branch.</p>
+      </section>
+
+      <section id="research" aria-labelledby="research-title">
+        <h2 id="research-title">Publications</h2>
+        <ol class="papers" reversed>
+          <li>
+            <article>
+              <p class="venue">OOPSLA 2026</p>
+              <h3><a href="https://lemonidas.github.io/pdf/TestingTheorems.pdf">Testing Theorems, Fully Automatically</a></h3>
+              <p>Segev Elazar Mittelman, Harrison Goldstein, and Leonidas Lampropoulos.</p>
+              <p class="paper-links"><a href="https://lemonidas.github.io/pdf/TestingTheorems.pdf">PDF</a>
+                <span aria-hidden="true">·</span> <a href="https://doi.org/10.1145/3839453">DOI</a>
+                <span aria-hidden="true">·</span> <a href="https://github.com/QuickChick/QuickChick/tree/3.0-candidate">Artifact</a></p>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <div><p>While the ultimate goal of interactive theorem proving is to prove theorems, it can really help to test them first. Testing theorems, specifically using property-based testing, helps users identify incorrect definitions and theorem statements before they waste time on a proof that could never succeed. Unfortunately, the testing infrastructure provided by modern theorem provers has yet to reach its full potential. Even QuickChick, the state-of-the-art property-based testing framework for Rocq, which offers random generation for data satisfying inductively defined relations, often requires substantial effort and expertise to be used effectively. This is in part because this effectiveness is heavily sensitive to both the order that hypotheses appear within a theorem, and to the order that inductive constraints appear within the inductive relations involved.</p><p>In this paper, we present a novel strategy for testing theorems that is highly effective, fully automatic, and robust to equivalent formulations of theorem and definition statements. To do so, we characterize the exponentially large space of possible QuickChick-style properties and generators as solutions to a constrained scheduling problem. To find the best property or generator in this space, we estimate effectiveness by introducing a notion of “density” for inductive relations, which approximates the tendency for a generator to succeed given arbitrary inputs. We implement our algorithm on top of the QuickChick framework for Rocq and evaluate it in a number of case studies from the literature, demonstrating that our push-button automation is on par with and in some cases even more effective at finding bugs than expertly handcrafted tests.</p></div>
+              </details>
+            </article>
+          </li>
+          <li>
+            <article>
+              <p class="venue">Haskell Symposium 2023</p>
+              <h3><a href="https://lemonidas.github.io/pdf/CombinatorialEnum.pdf">Don’t Go Down the Rabbit Hole: Reprioritizing Enumeration for Property-Based Testing</a></h3>
+              <p>Segev Elazar Mittelman, Aviel Resnick, Ivan Perez, Alwyn E. Goodloe, and Leonidas Lampropoulos.</p>
+              <p class="paper-links"><a href="https://lemonidas.github.io/pdf/CombinatorialEnum.pdf">PDF</a>
+                <span aria-hidden="true">·</span> <a href="https://doi.org/10.1145/3609026.3609730">DOI</a>
+                <span aria-hidden="true">·</span> <a href="https://doi.org/10.5281/zenodo.8162198">Artifact</a></p>
+              <details class="abstract">
+                <summary>Abstract</summary>
+                <div><p>Combinatorial testing is a popular software engineering technique for effectively testing programs that operate on parameters drawn from small, finite domains (such as configuration options), by providing a principled way of systematically exploring interactions between them. Property-based testing, on the other hand, is a widely used technique for testing the correctness of functional programs that usually operate on large, infinite domains (such as algebraic data types), by randomly generating or enumerating inputs.</p><p>In this paper, we show how to extend and apply ideas from the narrow scope of combinatorial testing techniques to the broader scope of property-based testing applications. In particular, we develop a novel way of pruning the input search space while still ensuring that a diverse set of constructor patterns appear among the set of generated tests. In our implementation, we integrate a state-of-the-art enumeration-based property-based testing framework, LazySearch, with a state-of-the-art combinatorial testing tool, NIST’s ACTS, and demonstrate how it can significantly speed up the effectiveness of testing—up to more than 20× in the case of a prior System F case study from the literature.</p></div>
+              </details>
+              <div class="talk">
+                <p class="talk-label">Talk · Haskell Symposium 2023</p>
+                <div class="video-wrap">
+                  <iframe src="https://www.youtube.com/embed/-CIyc27MJfw" title="Don't Go Down the Rabbit Hole: Reprioritizing Enumeration for Property-Based Testing" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <p class="video-link"><a href="https://www.youtube.com/watch?v=-CIyc27MJfw">Watch on YouTube</a> <span aria-hidden="true">·</span> ACM SIGPLAN</p>
+              </div>
+            </article>
+          </li>
+        </ol>
+      </section>
+
+      <section id="teaching" aria-labelledby="teaching-title">
+        <h2 id="teaching-title">Teaching</h2>
+        <p>I received the <a href="https://www.cs.umd.edu/article/2026/07/department-computer-science-recognizes-2025%E2%80%9326-teaching-award-recipients">Best Graduate TA award</a>
+          from UMD’s Department of Computer Science for 2025–26.</p>
+      </section>
+    </main>
+    <footer>
+      <a href="https://www.cs.umd.edu/people/segevem">UMD profile</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://dblp.org/pid/356/9958">DBLP</a>
+    </footer>
+  </div>
+</body>
+</html>

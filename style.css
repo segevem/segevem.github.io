@@ -1,0 +1,68 @@
+:root { color-scheme: light; font-family: "Palatino Linotype", Palatino, "Iowan Old Style", Georgia, serif; font-size: 17px; line-height: 1.62; color: #30302c; background: #f8f7f3; }
+* { box-sizing: border-box; }
+body { margin: 0; border-top: 5px solid #884339; }
+.page { display: grid; grid-template-columns: 235px minmax(0, 1fr); gap: 0 70px; max-width: 1250px; margin: 72px auto 32px; padding: 0 40px; }
+a { color: #873f35; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: #4f211b; }
+a:focus-visible, summary:focus-visible { outline: 2px solid #873f35; outline-offset: 5px; }
+header { align-self: start; position: sticky; top: 40px; }
+.name { display: block; color: #292925; font-size: 2rem; font-weight: normal; line-height: 1.18; letter-spacing: -.7px; text-decoration: none; white-space: nowrap; }
+.portrait { display: block; width: 156px; height: 190px; object-fit: cover; object-position: center top; margin: 27px 0 22px; filter: saturate(.88); }
+.role, .institution, nav, .email, .venue, .paper-links, summary, footer { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.role { margin: 20px 0 8px; font-size: .78rem; color: #68645e; }
+.institution { font-size: .83rem; line-height: 1.6; }
+nav { display: flex; flex-direction: column; gap: 9px; border-left: 2px solid #d9d2c8; padding-left: 17px; margin: 30px 0; font-size: .88rem; }
+nav a { text-decoration: none; }
+nav a:hover { text-decoration: underline; }
+.email { font-size: .82rem; }
+.social { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: .78rem; line-height: 1.8; margin-top: 15px; }
+h1, h2 { font-size: 1.6rem; font-weight: normal; line-height: 1.3; margin: 0 0 20px; color: #292925; }
+h2 { padding-bottom: 12px; border-bottom: 1px solid #d9d2c8; }
+h3 { font-size: 1.17rem; line-height: 1.4; margin: 6px 0 9px; font-weight: normal; }
+h3 a { color: #30302c; text-decoration: none; }
+h3 a:hover { color: #873f35; text-decoration: underline; }
+p { margin: 0 0 16px; }
+section { margin-bottom: 44px; scroll-margin-top: 30px; }
+.papers { list-style: none; padding: 0; margin: 0; }
+.papers li + li { border-top: 1px solid #e4dfd7; margin-top: 28px; padding-top: 25px; }
+.papers article > p:not(.venue):not(.paper-links) { font-size: .92rem; line-height: 1.6; color: #605c56; margin-bottom: 10px; }
+.venue { font-size: .86rem; color: #68635c; margin: 0; }
+.paper-links { font-size: .77rem; margin-bottom: 12px; }
+.paper-links span, footer span { padding: 0 8px; color: #9b9388; }
+.abstract { font-size: .9rem; }
+summary { width: fit-content; color: #873f35; cursor: pointer; font-size: .8rem; padding: 3px 0; }
+summary:hover { text-decoration: underline; text-underline-offset: 3px; }
+.abstract > div { border-left: 2px solid #c7b2a6; padding: 3px 0 1px 20px; margin-top: 12px; }
+.abstract p { margin-bottom: 15px; }
+.talk { margin-top: 28px; padding-top: 22px; border-top: 1px solid #e4dfd7; }
+.talk-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: .78rem; color: #873f35; margin-bottom: 12px; }
+.video-wrap { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #e8e3db; margin: 18px 0 10px; }
+.video-wrap iframe { display: block; width: 100%; height: 100%; border: 0; }
+.video-link { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: .77rem; }
+footer { grid-column: 2; border-top: 1px solid #d9d2c8; padding-top: 16px; font-size: .75rem; }
+.skip { position: absolute; top: 8px; left: 8px; transform: translateY(-160%); background: #fff; padding: 4px 10px; }
+.skip:focus { transform: none; }
+@media (max-width: 800px) {
+ .page { grid-template-columns: 190px minmax(0, 1fr); gap: 0 30px; padding: 0 28px; margin-top: 45px; }
+ .name { font-size: 1.6rem; }
+}
+@media (max-width: 620px) {
+ .page { display: block; margin-top: 30px; padding: 0 23px; }
+ header { position: static; border-bottom: 1px solid #d9d2c8; padding-bottom: 25px; margin-bottom: 30px; }
+ .name { font-size: 1.85rem; }
+ .name br { display: none; }
+ .name br::after { content: " "; }
+ .portrait { width: 116px; height: 142px; margin: 18px 0 15px; }
+ .role { margin-top: 12px; }
+ nav { flex-direction: row; flex-wrap: wrap; gap: 20px; border: 0; padding: 0; margin: 18px 0 12px; }
+ section { margin-bottom: 35px; }
+}
+@media print {
+ body { border: 0; background: white; }
+ .page { display: block; margin: 0; padding: 0; max-width: none; }
+ header { position: static; margin-bottom: 25px; }
+ nav, .skip { display: none; }
+ a { color: inherit; }
+ details::details-content { content-visibility: visible; }
+ article { break-inside: avoid; }
+}
